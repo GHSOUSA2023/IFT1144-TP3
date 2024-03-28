@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="./part1.js"></script>
+
     <title>TP 3</title>
 </head>
 <body>
@@ -15,9 +17,16 @@
     </section>
     <section>
         <h3>Partie 1: Formulaire de conversion</h3>
-        <span>Valeur: <input type="text"> Resultat ici</span> 
-        <span><button value="Pouces vers CM"></button></span>
-    </section>
+        <span>Valeur: <input type="text" id="inputText"> <span id="resultat">Resultat ici</span></span>
+        
+        <section>
+           
+            <span><button onclick="poucesVersCM()">Pouces vers cm</button></span>
+            <span><button onclick="cmVersPouces()">CM vers Pouces</button></span>
+            <span><button onclick="celVersFah()">Celsius vers Farenheit</button></span>
+            <span><button onclick="fahVersCel()">Farenheit vers Celsius</button></span>
 
+        </section>
+    </section>
 </body>
 </html>
