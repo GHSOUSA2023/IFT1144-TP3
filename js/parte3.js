@@ -63,7 +63,7 @@ $(document).ready(function() {
       var taxes = calculerTaxes(coutTotalObj);
       var coutTotalAvecTaxes = coutTotalObj + taxes.tvp + taxes.tps;
       
-      $(".total-obj").text("Total Articles: " + coutTotalObj.toFixed(2) + " $");
+      $(".tota-obj").text("Total Articles: " + coutTotalObj.toFixed(2) + " $");
       $(".total-taxes").text("Total Taxes: " + (taxes.tvp + taxes.tps).toFixed(2) + " $");
       $(".total-global").text("Total Global (Articles + Taxes): " + coutTotalAvecTaxes.toFixed(2) + " $");
   });
