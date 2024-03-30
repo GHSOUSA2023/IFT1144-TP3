@@ -1,44 +1,152 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
 
-    <script src="./parte1.js"></script>
-    <script src="./parte2.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/parte1.js"></script>
+    <script src="./js/parte2.js"></script>
+    <script src="./js/parte3.js"></script>
+
+    <!-- Function JavaScript pour faite l'animation du menu partie 3 -->
+    <script>
+        $(document).ready(function(){
+            $(".list").click(function(){
+                $(this).find(".menu-f").slideToggle(500);
+            });
+        });
+    </script>
 
     <title>TP 3</title>
 </head>
+
 <body>
+    <div class="content">
     <header>
-        <h1>Work practical #3</h1>
+        <h1>Travail pratique #3</h1>
     </header>
     <section>
-        <h3>Identification</h3>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium, distinctio facilis consequuntur voluptate error ratione facere officiis placeat autem vitae perferendis eligendi sunt commodi nihil quibusdam libero, quisquam sint optio.</p>
+        <h2>Identification</h2>
+        <p>Ce travail a &eacute;t&eacute; fait par Pr&eacute;nom: Geraldo Henrique, Nom: De Sousa, matricule: 20285973</p>
     </section>
-    <section>
-        <h3>Partie 1: Formulaire de conversion</h3>
+    <section class="border-section">
+        <h2>Partie 1: Formulaire de conversion</h2>
         <span>Valeur: <input type="text" id="inputText"> <span id="resultat">Resultat ici</span></span>
-        
-        <section>
-           
-            <span><button onclick="poucesVersCM()">Pouces vers cm</button></span>
-            <span><button onclick="cmVersPouces()">CM vers Pouces</button></span>
-            <span><button onclick="celVersFah()">Celsius vers Farenheit</button></span>
-            <span><button onclick="fahVersCel()">Farenheit vers Celsius</button></span>
-
-        </section>
+    <p></p>
+                <span><button onclick="poucesVersCM()">Pouces vers cm</button></span>
+                <span><button onclick="cmVersPouces()">CM vers Pouces</button></span>
+                <span><button onclick="celVersFah()">Celsius vers Farenheit</button></span>
+                <span><button onclick="fahVersCel()">Farenheit vers Celsius</button></span>
     </section>
 
-    <section>
-        <h3>Partie 2: Affichage du texte dans la page Web (contrôlé par JavaScript)</h3>
-        <label for="NomPren">Nom:</label><input type="text" id="NomPren" value="Nom Prénom">
+    <section class="border-section">
+        <h2>Partie 2: Affichage du texte dans la page Web (contr&ocirc;l&eacute; par JavaScript)</h2>
+        <label for="NomPren">Nom:</label><input type="text" id="NomPren" value="Nom Pr&eacute;nom">
         <br>
-        <label for="taille">Niveau (1 à 6)</label><input type="text" id="taille" value="2"/>
-        <button onclick="tailleH()">Afficher parte 2</button>
-        <div style="color:green; font-style: bold;" id="resultatParte2">
+        <label for="taille">Niveau (1 &agrave; 6)</label><input type="text" id="taille" value="2" />
+        <button onclick="tailleH()">Afficher partie 2</button>
+        <div style="color:green; font-weight: bold;" id="resultatParte2">
+            <h2 id="resultText">Affichage ici</h2>
+            <p style="color: red; font-weight: bold;" id="message"></p>
         </div>
-    
     </section>
+    
+
+    <section class="border-section">
+        <h2>Partie 3:Affichage du menu, animation des images et calcul du coût</h2>
+        
+        <div class="part3-container">
+            <table class="menu-table">
+                <tr>
+                    <td>
+                        <ul class="menu">
+                            <li>Menu</li>
+                            <li class="list">Entr&eacute;e
+                                <ul class="menu-f">
+                                    <li data-type="entree" data-image="./img/escargots.jpeg" data-cout="15.50">Escargot</li>
+                                    <li data-type="entree" data-image="./img/salade_verte.jpg" data-cout="13.00">Salade verte</li>
+                                    <li data-type="entree" data-image="./img/salade_cesar.jpg" data-cout="14.60">Salade César</li>
+                                </ul>
+                            </li>
+                            <li class="list">Principal
+                                <ul class="menu-f">
+                                    <li data-type="principal" data-image="./img/spaghetti.jpg" data-cout="23.40">Spaghetti</li>
+                                    <li data-type="principal" data-image="./img/steak.jpg" data-cout="32.70">Steak</li>
+                                    <li data-type="principal" data-image="./img/pizza.jpg" data-cout="19.90">Pizza</li>
+                                </ul>
+                            </li>
+                            <li class="list">Desserts
+                                <ul class="menu-f">
+                                    <li data-type="dessert" data-image="./img/tarte_citron.jpg" data-cout="15.90">La tarte au citron</li>
+                                    <li data-type="dessert" data-image="./img/millefeuille.jpg" data-cout="24.90">Le millefeuille</li>
+                                    <li data-type="dessert" data-image="./img/paris_brest.jpg" data-cout="24.90">Le Paris-Brest</li>
+                                </ul>
+                            </li>
+                            <li class="list">Boisson
+                                <ul class="menu-f">
+                                    <li data-type="boisson" data-image="./img/cafe.jpg" data-cout="3.45">Café</li>
+                                    <li data-type="boisson" data-image="./img/the.jpg" data-cout="3.45">Thé</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+            <table class="part3-table">
+                <tr>
+                    <td colspan="4">Votre choix:</td>
+                </tr>
+                <tr>
+                    <td>Entr&eacute;e:</td>
+                    <td>Principal:</td>
+                    <td>Dessert:</td>
+                    <td>Boisson:</td>
+                </tr>
+                <tr class="linha3">
+                    <td id="img-e"></td>
+                    <td id="img-p"></td>
+                    <td id="img-d"></td>
+                    <td id="img-b"></td>
+                </tr>
+                <tr>
+                    <td class="prix-e"></td>
+                    <td class="prix-p"></td>
+                    <td class="prix-d"></td>
+                    <td class="prix-b"></td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <br>
+                        <button id="calculate-total">Calcular Custo Total</button></td>
+                </tr>
+                <tr>
+                    <td colspan="4">   
+                        <span class="total-obj"></span><br>
+                        <span class="total-taxes"></span><br>
+                        <span class="total-global"></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+    </section>
+
+    <footer>
+        <table>
+            <tr>
+                <td><a href="http://jigsaw.w3.org/css-validator/check/referer" onclick="this.href='http://jigsaw.w3.org/css-validator/validator?uri='+document.URL" target="_blank">
+                    <img src="./img/valid_css_blue.png" alt="Validation CSS"></a></td>
+                <td><a href="http://validator.w3.org/check?uri=referer" onclick="this.href='http://validator.w3.org/check?uri='+document.URL" target="_blank">
+                    <img src="./img/valid_html_blue.png" alt="Validation HTML5"></a></td>
+            </tr>
+        </table>                
+    </footer>
+    </div>
 </body>
+
 </html>
